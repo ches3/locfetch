@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "locfetch",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "secrets": { "required": ["CLIENT_API_TOKEN", "MACRODROID_API_TOKEN", "MACRODROID_WEBHOOK_URL"] },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LOCATION",
+        "class_name": "LocationCoordinator",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["LocationCoordinator"],
+    },
+  ],
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "issues": {
+      "enabled": true,
+    },
+  },
+}

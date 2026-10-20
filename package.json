@@ -1,0 +1,29 @@
+{
+  "name": "locfetch",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "vp check",
+    "test": "vp test",
+    "cf-typegen": "wrangler types",
+    "deploy": "vp build && wrangler deploy",
+    "dev": "vp dev --host",
+    "build": "vp build"
+  },
+  "dependencies": {
+    "@hono/valibot-validator": "^0.6.1",
+    "@js-temporal/polyfill": "^0.5.1",
+    "hono": "^4.13.13",
+    "valibot": "^1.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.64.0",
+    "@cloudflare/vitest-plugin": "^1.4.4",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:",
+    "wrangler": "^4.151.1"
+  },
+  "packageManager": "pnpm@12.11.2"
+}
